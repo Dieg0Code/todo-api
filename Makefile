@@ -20,3 +20,6 @@ run_app:
 
 stop_app:
 	docker-compose stop
+
+run_mongodb:
+	docker run --name mongo -p 27017:27017 -d mongo mongod
