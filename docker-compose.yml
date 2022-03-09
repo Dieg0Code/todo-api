@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  todo-test:
+    container_name: todo-test
+    restart: always
+    build: .
+    ports:
+      - "5000:5000"
+    links:
+      - todo-db
+    volumes:
+      - .:/usr/src/app
+  todo-db:
+    container_name: mongodb
+    image: mongo
+    ports:
+      - "27017:27017"
+    logging:
+      driver: none
